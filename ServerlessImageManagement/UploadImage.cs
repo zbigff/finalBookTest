@@ -4,6 +4,7 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ServerlessImageManagement
@@ -18,7 +19,7 @@ namespace ServerlessImageManagement
         {
             if (req.Content.Headers.ContentLength != 0)
             {
-                var container = Utils.BlobClient.GetContainerReference(Utils.WhoAmI());
+                var container = Utils.BlobClient.GetContainerReference(Utils.WhoAmI(Thread.CurrentPrincipal.Identity));
                 var destPath = path.Replace('-', '/');
                 CloudBlockBlob newBlob = container.GetBlockBlobReference(destPath);
                 if (!await newBlob.ExistsAsync())
