@@ -19,7 +19,7 @@ namespace ServerlessImageManagement
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetAllContainerDirectories")]HttpRequestMessage req,
 IBinder binder, TraceWriter log)
         {
-            var userId = Utils.WhoAmI();
+            var userId = Utils.WhoAmI(Thread.CurrentPrincipal.Identity);
             var attribute = new BlobAttribute($"{userId}", FileAccess.Read);
             attribute.Connection = "ImageStorageAccount";
             var userStorage = await binder.BindAsync<CloudBlobContainer>(attribute);
