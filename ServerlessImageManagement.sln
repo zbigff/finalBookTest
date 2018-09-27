@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessImageManagement", "ServerlessImageManagement\ServerlessImageManagement.csproj", "{4EC001C6-5FEC-4863-8BB3-551BF8429C5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerlessImageManagement", "ServerlessImageManagement\ServerlessImageManagement.csproj", "{4EC001C6-5FEC-4863-8BB3-551BF8429C5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessFaceAggregator", "ServerlessFaceAggregator\ServerlessFaceAggregator.csproj", "{3F17EEC9-0994-428C-87CC-032F05FC3F55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerlessFaceAggregator", "ServerlessFaceAggregator\ServerlessFaceAggregator.csproj", "{3F17EEC9-0994-428C-87CC-032F05FC3F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessImageManagementTests", "ServerlessImageManagementTests\ServerlessImageManagementTests.csproj", "{729A04EE-CD7B-406E-AD02-0FB10C634A78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{12511FF8-95E1-4FF4-A206-1CC64196E874}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{3F17EEC9-0994-428C-87CC-032F05FC3F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F17EEC9-0994-428C-87CC-032F05FC3F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F17EEC9-0994-428C-87CC-032F05FC3F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729A04EE-CD7B-406E-AD02-0FB10C634A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729A04EE-CD7B-406E-AD02-0FB10C634A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729A04EE-CD7B-406E-AD02-0FB10C634A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729A04EE-CD7B-406E-AD02-0FB10C634A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12511FF8-95E1-4FF4-A206-1CC64196E874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12511FF8-95E1-4FF4-A206-1CC64196E874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12511FF8-95E1-4FF4-A206-1CC64196E874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12511FF8-95E1-4FF4-A206-1CC64196E874}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

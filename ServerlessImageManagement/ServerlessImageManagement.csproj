@@ -4,9 +4,13 @@
     <AzureFunctionsVersion>v1</AzureFunctionsVersion>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AzureFunctions.Autofac" Version="3.0.5" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.14" />
     <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-beta0004" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

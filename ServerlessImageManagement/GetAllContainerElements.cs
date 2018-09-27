@@ -1,3 +1,4 @@
+using AzureFunctions.Autofac;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
@@ -10,16 +11,18 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Utilities.IdentityProvider;
 
 namespace ServerlessImageManagement
 {
+    [DependencyInjectionConfig(typeof(DIConfig))]
     public static class GetAllContainerElements
     {
         [FunctionName("GetAllContainerElements")]
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]HttpRequestMessage req,
-             IBinder binder, TraceWriter log)
+            IBinder binder, [Inject] IIdentityProvider identityProvider, TraceWriter log)
         {
-            var userId = Utils.WhoAmI(Thread.CurrentPrincipal.Identity);
+            var userId = identityProvider.WhoAmI(Thread.CurrentPrincipal.Identity);
             var attribute = new BlobAttribute($"{userId}", FileAccess.Read);
             attribute.Connection = "ImageStorageAccount";
 
@@ -33,3 +36,4 @@ namespace ServerlessImageManagement
         }
     }
 }
+
